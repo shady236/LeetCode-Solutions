@@ -5,9 +5,9 @@
  */
 int* getConcatenation(int* nums, int numsSize, int* returnSize)
 {
-    int* res = malloc((numsSize<<1) * sizeof(int));
-    *returnSize = 2 * numsSize;
-    for(int i=0; i<2 * numsSize; i++)
+    *returnSize = numsSize<<1;
+    int* res = malloc((*returnSize) * sizeof(int));
+    for(int i=0; i<(*returnSize); i++)
         res[i] = nums[i % numsSize];
     return res;
 }
