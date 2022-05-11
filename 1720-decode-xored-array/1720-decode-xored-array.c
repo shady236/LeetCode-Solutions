@@ -10,8 +10,8 @@ int* decode(int* encoded, int encodedSize, int first, int* returnSize)
     *returnSize = arrSize;
     
     arr[0] = first;
-    for(int i=1; i<arrSize; i++)
-        arr[i] = arr[i-1] ^ encoded[i-1];
+    for(int i=0; i<encodedSize; i++)
+        arr[i+1] = arr[i] ^ encoded[i];
     
     return arr;
 }
