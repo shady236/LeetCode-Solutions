@@ -2,12 +2,15 @@
 
 int numberOfSteps(int num)
 {
-    int cnt = 0;
-    while(num)
+    int onesCnt = 0;
+    int mostSignificantOnePos = 0;
+    for(int i=0; i<21; i++)
     {
-        if(num % 2 == 0)        num /= 2;
-        else                    num--;
-        cnt++;
+        if((num>>i) & 1)
+        {
+            onesCnt++;
+            mostSignificantOnePos = i;
+        }
     }
-    return cnt;
+    return onesCnt + mostSignificantOnePos;
 }
