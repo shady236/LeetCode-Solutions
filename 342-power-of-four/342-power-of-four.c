@@ -20,6 +20,6 @@ bool isPowerOfFour(int n)
         }
     }
     
-    if(onesCount == 1 && zerosBoforeFirstOne % 2 == 0)      return true;
+    if(onesCount == 1 && GET_BIT(zerosBoforeFirstOne, 0) == 0)      return true;
     return false;
 }
