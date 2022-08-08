@@ -9,6 +9,7 @@ int nearestValidPoint(int x, int y, int** points, int pointsSize, int* pointsCol
     {
         int xi = points[i][0];
         int yi = points[i][1];
+        
         if(xi == x || yi == y)
         {
             int d = abs(x - xi) + abs(y - yi);
