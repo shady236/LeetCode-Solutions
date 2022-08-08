@@ -15,6 +15,9 @@ int nearestValidPoint(int x, int y, int** points, int pointsSize, int* pointsCol
             
             if(d < minDistance)
             {
+                if(d == 0)
+                    return i;
+                
                 minDistance = d;
                 minDistanceIdx = i;
             }
