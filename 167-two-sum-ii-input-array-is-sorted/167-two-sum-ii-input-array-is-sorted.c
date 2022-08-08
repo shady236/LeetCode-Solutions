@@ -5,26 +5,26 @@
  */
 int* twoSum(int* numbers, int numbersSize, int target, int* returnSize)
 {
-    int left  = 0;
-    int right = numbersSize - 1;
+    int* res = malloc(2 * sizeof(int));
+    *returnSize = 2;
     
-    while(left < right)
+    res[0]  = 0;        // left 
+    res[1] = numbersSize - 1;       // right 
+    
+    while(res[0] < res[1])
     {
-        int sum = numbers[left] + numbers[right];
+        int sum = numbers[res[0]] + numbers[res[1]];
         
         if(sum == target)
             break;
         else if(sum > target)
-            right--;
+            res[1]--;
         else 
-            left++;
+            res[0]++;
     }
     
-    int* res = malloc(2 * sizeof(int));
-    *returnSize = 2;
-    
-    res[0] = left  + 1;
-    res[1] = right + 1;
+    res[0]++;
+    res[1]++;
     
     return res;
 }
