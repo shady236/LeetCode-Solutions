@@ -9,6 +9,9 @@
 
 struct ListNode* reverseList(struct ListNode* head)
 {
+    if(head == NULL)
+        return NULL;
+    
     struct ListNode* prev = NULL;
     struct ListNode* curr = head;
     struct ListNode* next;
