@@ -3,15 +3,15 @@ char * longestPalindrome(char * s)
 {
     int len = strlen(s);
     
-    char isLPS[1000][1000] = {0};
+    char isPalindrome[1000][1000] = {0};
     
     for (int i = len - 1; i >= 0; i--)
     {
-        isLPS[i][i] = 1;
+        isPalindrome[i][i] = 1;
         for (int j = i + 1; j < len; j++)
         {
             if (s[i] == s[j])
-                isLPS[i][j] = (j == i + 1) || isLPS[i + 1][j - 1];
+                isPalindrome[i][j] = (j == i + 1) || isPalindrome[i + 1][j - 1];
         }
     }
     
@@ -24,7 +24,7 @@ char * longestPalindrome(char * s)
     {
         for (int j = i; j < len; j++)
         {
-            if (!isLPS[i][j])
+            if (!isPalindrome[i][j])
                 continue;
             
             int LPS = j - i + 1;
